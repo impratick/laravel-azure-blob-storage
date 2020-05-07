@@ -86,4 +86,4 @@ This package was made based on [A skeleton repository for Spatie's PHP Packages]
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
