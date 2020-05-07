@@ -1,0 +1,44 @@
+{
+    "name": "impratick/laravel-azure-blob-storage",
+    "description": "Azure Blob Storage Wrapper with prefix support for Laravel framework",
+    "keywords": [
+        "laravel",
+        "filesystem",
+        "azure",
+        "blob",
+        "storage",
+        "laravel-azure-blob-storage"
+    ],
+    "type": "project",
+    "license": "MIT",
+    "authors": [{
+        "name": "Pratik Padia",
+        "email": "padia.pratik@gmail.com"
+    }],
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "~5.7|~5.8|^6.0",
+        "league/flysystem-azure-blob-storage": "^0.1.6"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.0",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Impratick\\ExtendedAzureBlobStorage\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": ["Impratick\\ExtendedAzureBlobStorage\\ExtendedAzureBlobStorageServiceProvider"]
+        },
+        "branch-alias": {
+            "dev-master": "1.0.0"
+        }
+    },
+    "minimum-stability": "stable"
+}
