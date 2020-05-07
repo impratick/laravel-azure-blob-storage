@@ -1,3 +1,5 @@
+
+
 # Laravel Azure Blob Storage
 
 Laravel Azure Blob Storage wrapper for [Flysystem Azure Blob Storage](https://flysystem.thephpleague.com/docs/adapter/azure/) with prefix support and easy integration with [Spatie's Media Library](https://docs.spatie.be/laravel-medialibrary).
@@ -37,15 +39,15 @@ Configure your disk in `config/filesystem.php`
 ```
 
 Here **prefix** is needed if you have custom folder structure i.e.
-```
-• project-storage
-    • local_media / media folders
-	• staging_media / media folders
-	• production_media / media folders
-```
-So as per above scenario value of **prefix** would be as per environment **(local_media/staging_media/production_media)**
 
-### For integration with Media Library
+* project-storage
+    * local_media / media folders
+    * staging_media / media folders
+    * production_media / media folders
+
+So as per above scenario value of **AZURE_CONTAINER** would be **project-storage** and  **AZURE_BLOB_FOLDER_NAME** would be as per environment **(local_media/staging_media/production_media)** any.
+
+## For integration with Media Library
 
 Install and configure [Media Library](https://docs.spatie.be/laravel-medialibrary/v7/installation-setup/).
 
@@ -53,23 +55,27 @@ Add the following to `config/medialibrary.php`
 
 ```php
     'azure' => [
-        'domain'    => 'https://' . env('AZURE_ACCOUNT_NAME') . '.blob.' . env('AZURE_ENDPOINT_SUFFIX') . '/' . env('AZURE_CONTAINER') . (env('AZURE_BLOB_FOLDER_NAME') ? '/' . env('AZURE_BLOB_FOLDER_NAME') : ''),
+        'domain'    => 'https://' . env('AZURE_ACCOUNT_NAME') . '.blob.' . env('AZURE_ENDPOINT_SUFFIX') .
+        '/' . env('AZURE_CONTAINER') .
+        (env('AZURE_BLOB_FOLDER_NAME') ? '/' . env('AZURE_BLOB_FOLDER_NAME') : ''),
     ],
 
      /*
      * When urls to files get generated, this class will be called. Leave empty
      * if your files are stored locally above the site root or on s3.
      */
-    'url_generator' => (env('MEDIA_DISK', 'public') == 'azure' ? Impratick\ExtendedAzureBlobStorage\MediaLibrary\UrlGenerator\AzureBlobUrlGenerator::class : null),
+    'url_generator' => (env('MEDIA_DISK', 'public') == 'azure'
+        ? Impratick\ExtendedAzureBlobStorage\MediaLibrary\UrlGenerator\AzureBlobUrlGenerator::class
+        : null),
 ```
 
-### Changelog
+## Changelog
 
 Please review [CHANGELOG](CHANGELOG.md) for more information.
 
-### Security
+## Security
 
-If you discover any security related issues, please fill free to report at padia.pratik94@gmail.com.
+If you discover any security related issues, please feel free to report at padia.pratik94@gmail.com.
 
 ## Credits
 
