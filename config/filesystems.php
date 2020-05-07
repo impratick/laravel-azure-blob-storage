@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     'disks' => [
 
         'azure' => [
@@ -16,5 +15,4 @@ return [
         ],
 
     ],
-
 ];
