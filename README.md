@@ -41,11 +41,11 @@ Configure your disk in `config/filesystem.php`
 Here **prefix** is needed if you have custom folder structure i.e.
 
 * project-storage
-    * local_media / media folders
-    * staging_media / media folders
-    * production_media / media folders
+    * local/folders
+    * staging/folders
+    * production/folders
 
-So as per above scenario value of **AZURE_CONTAINER** would be **project-storage** and  **AZURE_BLOB_FOLDER_NAME** would be as per environment **(local_media/staging_media/production_media)** any.
+So as per above scenario value of **AZURE_CONTAINER** would be **project-storage** and  **AZURE_BLOB_FOLDER_NAME** would be as per environment **(local/staging/production)** any.
 
 ## For integration with Media Library
 
