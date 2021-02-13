@@ -37,7 +37,7 @@
             "providers": ["Impratick\\ExtendedAzureBlobStorage\\ExtendedAzureBlobStorageServiceProvider"]
         },
         "branch-alias": {
-            "dev-master": "1.0.0"
+            "dev-master": "1.0.x-dev"
         }
     },
     "minimum-stability": "stable"
